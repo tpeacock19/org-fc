@@ -52,11 +52,11 @@
    (org-show-children)
    (org-fc-show-latex)))
 
-(org-fc-register-type
- 'normal
- 'org-fc-type-normal-setup
- 'org-fc-type-normal-flip
- 'org-fc-noop)
+(eval-and-compile (org-fc-register-type
+                   'normal
+                   'org-fc-type-normal-setup
+                   'org-fc-type-normal-flip
+                   'org-fc-noop))
 
 ;;; Footer
 

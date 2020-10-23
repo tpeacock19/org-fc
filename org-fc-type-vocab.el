@@ -113,11 +113,11 @@
              (concat (car deemph) (cdr diff) (car deemph))))
           "")))))
 
-(org-fc-register-type
- 'vocab
- 'org-fc-type-vocab-setup
- 'org-fc-type-vocab-flip
- 'org-fc-noop)
+(eval-and-compile (org-fc-register-type
+                   'vocab
+                   'org-fc-type-vocab-setup
+                   'org-fc-type-vocab-flip
+                   'org-fc-noop))
 
 ;;; Footer
 

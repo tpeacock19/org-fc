@@ -96,11 +96,11 @@ function is expected to be called with point on a heading."
      (org-show-children)
      (org-fc-show-latex))))
 
-(org-fc-register-type
- 'text-input
- 'org-fc-type-text-input-setup
- nil
- 'org-fc-noop)
+(eval-and-compile (org-fc-register-type
+                   'text-input
+                   'org-fc-type-text-input-setup
+                   nil
+                   'org-fc-noop))
 
 ;;; Footer
 

@@ -198,11 +198,11 @@ Processes all holes in the card text."
      (format "%s" (1- hole-id)))
     (org-fc-review-data-update (reverse ids))))
 
-(org-fc-register-type
- 'cloze
- 'org-fc-type-cloze-setup
- 'org-fc-type-cloze-flip
- 'org-fc-type-cloze-update)
+(eval-and-compile (org-fc-register-type
+                   'cloze
+                   'org-fc-type-cloze-setup
+                   'org-fc-type-cloze-flip
+                   'org-fc-type-cloze-update))
 
 ;;; Footer
 

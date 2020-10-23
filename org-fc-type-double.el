@@ -60,11 +60,11 @@
    (org-show-children)
    (org-fc-show-latex)))
 
-(org-fc-register-type
- 'double
- 'org-fc-type-double-setup
- 'org-fc-type-double-flip
- 'org-fc-noop)
+(eval-and-compile (org-fc-register-type
+                   'double
+                   'org-fc-type-double-setup
+                   'org-fc-type-double-flip
+                   'org-fc-noop))
 
 ;;; Footer
 
