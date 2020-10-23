@@ -30,6 +30,9 @@
 (require 'org-fc)
 (require 'edmacro)
 
+(defvar org-fc-evil-keymaps nil
+  "Identify if using evil-mode for keymap hints.")
+
 (defun org-fc-keymap-hint--symbol-name (name)
   "Remove org-fc- prefixes from symbol NAME."
   (setq name (symbol-name name))
@@ -44,14 +47,14 @@
   "Generate key-binding hints string for KEYMAP."
   (mapconcat
    (lambda (key)
-     (if (symbolp (cdr key))
+     (if (if org-fc-evil-keymaps (listp key) (symbolp (cdr key)))
          (format
           "[%s] %s"
           (edmacro-format-keys (list (car key)))
           (if (symbolp (cdr key))
               (org-fc-keymap-hint--symbol-name (cdr key))
             (cdr key)))))
-   (reverse (cdr keymap))
+   (reverse (if org-fc-evil-keymaps (cadr keymap) (cdr keymap)))
    " "))
 
 (add-hook 'org-fc-review-flip-mode-hook
