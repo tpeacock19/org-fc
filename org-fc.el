@@ -529,20 +529,21 @@ Should only be used by the init functions of card TYPEs."
 ;;; Card Types
 ;;;; Type Management
 
-(defvar org-fc-types '()
-  "Alist for registering card types.
+(eval-and-compile
+  (defvar org-fc-types '()
+    "Alist for registering card types.
 Entries should be lists (name handler-fn update-fn).
 Use `org-fc-register-type' for adding card types.")
 
-(defun org-fc-register-type (name setup-fn flip-fn update-fn)
-  "Register a new card type.
+  (defun org-fc-register-type (name setup-fn flip-fn update-fn)
+    "Register a new card type.
 Argument NAME Name of the new type.
 Argument SETUP-FN Function for initializing a new card of this type.
 Argument FLIP-FN Function for flipping a card during review.
 Argument UPDATE-FN Function to update a card when it's contents have changed."
-  (push
-   (list name setup-fn flip-fn update-fn)
-   org-fc-types))
+    (push
+     (list name setup-fn flip-fn update-fn)
+     org-fc-types)))
 
 (defun org-fc-type-setup-fn (type)
   "Get the review function for a card of TYPE."
@@ -1214,8 +1215,9 @@ removed."
 (defvar org-fc-custom-contexts '()
   "User-defined review contexts.")
 
-(defvar org-fc-context-all '(:paths all)
-  "Default context for all cards.")
+(eval-and-compile
+  (defvar org-fc-context-all '(:paths all)
+    "Default context for all cards."))
 (defvar org-fc-context-buffer '(:paths buffer)
   "Default context for the current buffer.")
 
