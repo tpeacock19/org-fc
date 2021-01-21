@@ -27,6 +27,8 @@
 ;;
 ;;; Code:
 
+(require 'org-fc-macros)
+
 (defvar org-fc-type-double--overlay '())
 
 (defun org-fc-type-double-init ()

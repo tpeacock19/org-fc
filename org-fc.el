@@ -352,6 +352,7 @@ indenting the current heading."
          (org-element-property :begin el)
          (org-element-property :end el)))))
 
+
 (defmacro org-fc-with-point-at-entry (&rest body)
   "Execute BODY with point at the card heading.
 If point is not inside a flashcard entry, an error is raised."
@@ -1384,7 +1385,7 @@ same ID as the current card in the session."
      (org-fc-review-quit)
      (signal (car err) (cdr err)))))
 
-(define-obsolete-function-alias 'org-fc-review-rate-card 'org-fc-review-rate)
+(define-obsolete-function-alias 'org-fc-review-rate-card 'org-fc-review-rate "0.0.1")
 
 (defun org-fc-review-rate-again ()
   "Rate the card at point with 'again'."

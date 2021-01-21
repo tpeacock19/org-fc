@@ -34,6 +34,9 @@
 
 ;;; Queue / Processing of Files
 
+(require 'org-fc-macros)
+;; (require 'org-fc-session)
+
 (defvar org-fc-cache
   (make-hash-table :test #'equal)
   "Cache mapping filenames to card lists.")
@@ -146,7 +149,7 @@ are renamed or deleted."
   :global t
   (if org-fc-cache-mode
       (org-fc-cache--enable)
-      (org-fc-cache--disable)))
+    (org-fc-cache--disable)))
 
 ;;; Coherence Check
 

@@ -30,6 +30,7 @@
 ;;
 ;;; Code:
 
+(require 'org-fc-macros)
 (require 'org-fc-audio)
 
 (defcustom org-fc-type-vocab-slow-speed 0.7
