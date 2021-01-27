@@ -62,7 +62,7 @@ function is expected to be called with point on a heading."
   "Prepare a text-input card for review."
   (interactive)
   ;; Hide answer
-  (outline-hide-subtree)
+  (org-fold-hide-subtree)
   (when (org-fc-has-back-heading-p)
     (org-show-entry)
     (org-fc-with-point-at-back-heading (org-show-set-visibility 'minimal)))

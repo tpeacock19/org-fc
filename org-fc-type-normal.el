@@ -36,7 +36,7 @@
   "Prepare a normal card for review."
   (interactive)
   ;; Make sure the card is collapsed
-  (outline-hide-subtree)
+  (org-fold-hide-subtree)
   (when (org-fc-has-back-heading-p)
     (org-show-entry)
     ;; Make sure the back heading is visible

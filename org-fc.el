@@ -692,7 +692,7 @@ Only parent headings of the current heading remain visible."
     (save-excursion
       (while (org-up-heading-safe))
       (org-narrow-to-subtree)
-      (outline-hide-subtree))
+      (org-fold-hide-subtree))
     ;; Show only the ancestors of the current card
     (org-show-set-visibility org-fc-narrow-visibility)
     (if (member "noheading" tags) (org-fc-hide-heading))))

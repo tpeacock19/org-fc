@@ -42,11 +42,11 @@
   (pcase position
     ("front" (org-fc-type-normal-setup position))
     ("back"
-     (outline-hide-subtree)
+     (org-fold-hide-subtree)
      (if (org-fc-has-back-heading-p)
          (org-fc-with-point-at-back-heading
           (org-fc-show-latex)
-          (outline-show-entry))
+          (org-show-entry))
        (org-show-entry)
        (setq org-fc-type-double--overlay (org-fc-hide-heading "[...]"))))
     (_ (error "Invalid double position %s" position))))
